@@ -358,6 +358,9 @@ def help():
                   "╠❂͜͡☬➣" + key + "Uppro\n" + \
                   "╠❂͜͡☬➣" + key + "Updategrup\n" + \
                   "╠❂͜͡☬➣" + key + "Upbot\n" + \
+                  "╠❂͜͡☬➣" + key + "Stealname\n" + \
+                  "╠❂͜͡☬➣" + key + "Stealbio\n" + \
+                  "╠❂͜͡☬➣" + key + "Stealpicture\n" + \
                   "╠❂͜͡☬➣" + key + "Broadcast:「Text」\n" + \
                   "╠❂͜͡☬➣" + key + "Setkey「New Key」\n" + \
                   "╠❂͜͡☬➣" + key + "Mykey\n" + \
