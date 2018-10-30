@@ -81,6 +81,17 @@ ghost = []
 
 welcome = []
 
+myProfile = {
+	"displayName": "",
+	"statusMessage": "",
+	"pictureStatus": ""
+}
+
+AditmadzsProfile = cl.getProfile()
+myProfile["displayName"] = AditmadzsProfile.displayName
+myProfile["statusMessage"] = AditmadzsProfile.statusMessage
+myProfile["pictureStatus"] = AditmadzsProfile.pictureStatus
+
 responsename1 = ki.getProfile().displayName
 responsename2 = kk.getProfile().displayName
 responsename3 = kc.getProfile().displayName
@@ -171,11 +182,22 @@ with open('creator.json', 'r') as fp:
     creator = json.load(fp)
 with open('owner.json', 'r') as fp:
     owner = json.load(fp)
+with open('admin.json', 'r') as fp:
+    admin = json.load(fp)    
 
-Setbot = codecs.open("setting.json","r","utf-8")
-Setmain = json.load(Setbot)
+Setbot1 = codecs.open("setting.json","r","utf-8")
+Setmain = json.load(Setbot1)
+Setbot2 = codecs.open("settings.json","r","utf-8")
+settings = json.load(Setbot2)
+Setbot3 = codecs.open("wait.json","r","utf-8")
+wait = json.load(Setbot3)
+Setbot4 = codecs.open("read.json","r","utf-8")
+read = json.load(Setbot4)
 
 mulai = time.time()
+
+msg_dict = {}
+msg_dict1 = {}
 
 tz = pytz.timezone("Asia/Jakarta")
 timeNow = datetime.now(tz=tz)
