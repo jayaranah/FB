@@ -1688,6 +1688,63 @@ def bot(op):
                                except:
                                    pass
 
+                        elif cmd.startswith("stealname "):
+                          if msg._from in admin:
+                              if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                  names = re.findall(r'@(\w+)', text)
+                                  mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                  mentionees = mention['MENTIONEES']
+                                  lists = []
+                                  for mention in mentionees:
+                                      if mention["M"] not in lists:
+                                          lists.append(mention["M"])
+                                  for ls in lists:
+                                      contact = cl.getContact(ls)
+                                      cl.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
+                            
+                        elif cmd.startswith("stealbio "):
+                            if msg._from in admin:
+                              if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                  names = re.findall(r'@(\w+)', text)
+                                  mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                  mentionees = mention['MENTIONEES']
+                                  lists = []
+                                  for mention in mentionees:
+                                      if mention["M"] not in lists:
+                                          lists.append(mention["M"])
+                                  for ls in lists:
+                                      contact = cl.getContact(ls)
+                                      cl.sendMessage(msg.to, "[ Status Message ]\n{}" + contact.statusMessage)
+                            
+                        elif cmd.startswith("stealpicture "):
+                            if msg._from in admin:
+                                if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                    names = re.findall(r'@(\w+)', text)
+                                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                    mentionees = mention['MENTIONEES']
+                                    lists = []
+                                    for mention in mentionees:
+                                        if mention["M"] not in lists:
+                                            lists.append(mention["M"])
+                                    for ls in lists:
+                                        path = "http://dl.profile.line-cdn.net/" + cl.getContact(ls).pictureStatus
+                                        cl.sendImageWithURL(msg.to, str(path))
+                            
+                        elif cmd.startswith("stealcover "):
+                            if msg._from in admin:
+                                if line != None:
+                                    if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                        names = re.findall(r'@(\w+)', text)
+                                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                        mentionees = mention['MENTIONEES']
+                                        lists = []
+                                        for mention in mentionees:
+                                            if mention["M"] not in lists:
+                                                lists.append(mention["M"])
+                                        for ls in lists:
+                                            path = cl.getProfileCoverURL(ls)
+                                            cl.sendImageWithURL(msg.to, str(path))
+
                         elif cmd.startswith("broadcast: "):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
