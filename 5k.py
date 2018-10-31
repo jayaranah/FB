@@ -2267,6 +2267,21 @@ def bot(op):
                                        nm8 += [nama[p]]
                                    mentionMembers(msg.to, nm8)
 
+                        elif cmd == "tag" or text.lower() == '🏵':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                             members = []
+                             if msg.toType == 1:
+                                 room = cl.getCompactRoom(to)
+                                 members = [mem.mid for mem in room.contacts]
+                             elif msg.toType == 2:
+                                 group = cl.getCompactGroup(to)
+                                 members = [mem.mid for mem in group.members]
+                             else:
+                                 return cl.sendMessage(to, 'Failed mentionall members, use this command only on room or group chat')
+                             if members:
+                                 mentionMembers(to, members)
+
                         elif cmd == "listbot":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
