@@ -1323,8 +1323,9 @@ def bot(op):
                    mentionees = mention['MENTIONEES']
                    for mention in mentionees:
                         if mention ['M'] in Bots:
+                           cl.mentiontag(msg._from, [msg._from])
                            cl.sendMessage(msg._from, wait["Respontag"])
-                           cl.sendMessage(msg._from, "แทคหาพ่อมึงหรอ ^ω^\n🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
+                           cl.sendMessage(msg._from, "🤖 SELFBOT-BY:MAX 🤖\n🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
                            cl.sendImageWithURL(msg._from,image)
                            cl.sendMessage(msg._from, None, contentMetadata={"STKID":"515","STKPKGID":"2","STKVER":"1"}, contentType=7)
                            break
