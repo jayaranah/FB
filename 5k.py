@@ -2673,8 +2673,8 @@ def bot(op):
                                          ret_ += "\n🤖" + data[3]
                                          ret_ += "\n🤖" + data[4]
                                          ret_ += "\n🤖" + data[5]
-                                         ret_ += "\n\nTanggal : " + datetime.strftime(timeNow,'%Y-%m-%d')
-                                         ret_ += "\nJam : " + datetime.strftime(timeNow,'%H:%M:%S')
+                                         ret_ += "\n\n🤖Tanggal : " + datetime.strftime(timeNow,'%Y-%m-%d')
+                                         ret_ += "\n🤖Jam : " + datetime.strftime(timeNow,'%H:%M:%S')
                                   cl.sendMessage(msg.to, str(ret_))
 
                         elif cmd.startswith("cuaca: "):
