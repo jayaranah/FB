@@ -150,7 +150,7 @@ wait = {
     "contact":False,
     'autoJoin':True,
     'autoAdd':True,
-    'autoRead':True,
+    'autoRead':False,
     'autoLeave':False,
     'autoLeave1':False,
     "detectMention":True,
@@ -1593,12 +1593,8 @@ def bot(op):
                                 md = "┏━━━━━━━━━━━\n┃     🤖 S T A T U S 🤖\n┗━━━━━━━━━━━\n"
                                 if wait["sticker"] == True: md+="┃🤖┃ ✅ Sticker「ON」\n"
                                 else: md+="┃🤖┃ ❌ Sticker「OFF」\n"
-                                if wait["autoJoinTicket"] == True: md+="┃🤖┃ ✅ Jointicket「ON」\n"
-                                else: md+="┃🤖┃ ❌ Jointicket「OFF」\n"
                                 if wait["contact"] == True: md+="┃🤖┃ ✅ Contact「ON」\n"
                                 else: md+="┃🤖┃ ❌ Contact「OFF」\n"
-                                if wait["autoRead"] == True: md+="┃🤖┃ ✅ Autoread「ON」\n"
-                                else: md+="┃🤖┃ ❌ Autoread「OFF」\n"
                                 if wait["talkban"] == True: md+="┃🤖┃ ✅ Talkban「ON」\n"
                                 else: md+="┃🤖┃ ❌ Talkban「OFF」\n"
                                 if wait["Mentionkick"] == True: md+="┃🤖┃ ✅ Notag「ON」\n"
