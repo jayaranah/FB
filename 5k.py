@@ -103,7 +103,7 @@ settings = {
     "group":{},
     "groupPicture":False,
     "changePicture":False,
-    "autoJoinTicket":False,
+    "autoJoinTicket":True,
     "userAgent": [
         "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
         "Mozilla/5.0 (X11; U; Linux amd64; rv:5.0) Gecko/20100101 Firefox/5.0 (Debian)",
@@ -419,9 +419,11 @@ def help():
                   "╠═════════════════\n" + \
                   "╠❂͜͡☬➣  🤖 SETTING 🤖\n" + \
                   "╠═════════════════\n" + \
+                  "╠❂͜͡☬➣" + key + "Jointicket「on/off」\n" + \
                   "╠❂͜͡☬➣" + key + "Sticker「on/off」\n" + \
                   "╠❂͜͡☬➣" + key + "Respon「on/off」\n" + \
                   "╠❂͜͡☬➣" + key + "Contact「on/off」\n" + \
+                  "╠❂͜͡☬➣" + key + "Autoread「on/off」\n" + \
                   "╠❂͜͡☬➣" + key + "Autojoin「on/off」\n" + \
                   "╠❂͜͡☬➣" + key + "Autoadd「on/off」\n" + \
                   "╠❂͜͡☬➣" + key + "Welcome「on/off」\n" + \
@@ -1322,7 +1324,7 @@ def bot(op):
                    for mention in mentionees:
                         if mention ['M'] in Bots:
                            cl.sendMessage(msg.to, wait["Respontag"])
-                           cl.sendMessage(msg._from, "Respon Terkirim\n🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
+                           cl.sendMessage(msg._from, "จะแทคทำไมเวลานี้ 😠\n🤖 Tanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\n🤖 Jam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
                            cl.sendImageWithURL(msg._from,image)
                            cl.sendMessage(msg._from, None, contentMetadata={"STKID":"515","STKPKGID":"2","STKVER":"1"}, contentType=7)
                            break
@@ -1591,8 +1593,12 @@ def bot(op):
                                 md = "┏━━━━━━━━━━━\n┃     🤖 S T A T U S 🤖\n┗━━━━━━━━━━━\n"
                                 if wait["sticker"] == True: md+="┃🤖┃ ✅ Sticker「ON」\n"
                                 else: md+="┃🤖┃ ❌ Sticker「OFF」\n"
+                                if wait["autoJoinTicket"] == True: md+="┃🤖┃ ✅ Jointicket「ON」\n"
+                                else: md+="┃🤖┃ ❌ Jointicket「OFF」\n"
                                 if wait["contact"] == True: md+="┃🤖┃ ✅ Contact「ON」\n"
                                 else: md+="┃🤖┃ ❌ Contact「OFF」\n"
+                                if wait["autoRead"] == True: md+="┃🤖┃ ✅ Autoread「ON」\n"
+                                else: md+="┃🤖┃ ❌ Autoread「OFF」\n"
                                 if wait["talkban"] == True: md+="┃🤖┃ ✅ Talkban「ON」\n"
                                 else: md+="┃🤖┃ ❌ Talkban「OFF」\n"
                                 if wait["Mentionkick"] == True: md+="┃🤖┃ ✅ Notag「ON」\n"
