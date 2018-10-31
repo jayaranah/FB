@@ -1269,11 +1269,11 @@ def bot(op):
 
         if op.type == 55:
             try:
-                if op.param1 in Setmain["ARreadPoint"]:
-                   if op.param2 in Setmain["ARreadMember"][op.param1]:
+                if op.param1 in Setmain["ADITMADZSreadPoint"]:
+                   if op.param2 in Setmain["ADITMADZSreadMember"][op.param1]:
                        pass
                    else:
-                       Setmain["ARreadMember"][op.param1][op.param2] = True
+                       Setmain["ADITMADZSreadMember"][op.param1][op.param2] = True
                 else:
                    pass
             except:
@@ -2562,8 +2562,8 @@ def bot(op):
                             if msg._from in admin:
                                  tz = pytz.timezone("Asia/Jakarta")
                                  timeNow = datetime.now(tz=tz)
-                                 Setmain['ARreadPoint'][msg.to] = msg_id
-                                 Setmain['ARreadMember'][msg.to] = {}
+                                 Setmain['ADITMADZSreadPoint'][msg.to] = msg_id
+                                 Setmain['ADITMADZSreadMember'][msg.to] = {}
                                  cl.sendText(msg.to, "Lurking berhasil diaktifkan\n\nTanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\nJam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
                             
                         elif cmd == "lurking off":
@@ -2571,16 +2571,16 @@ def bot(op):
                             if msg._from in admin:
                                  tz = pytz.timezone("Asia/Jakarta")
                                  timeNow = datetime.now(tz=tz)
-                                 del Setmain['ARreadPoint'][msg.to]
-                                 del Setmain['ARreadMember'][msg.to]
+                                 del Setmain['ADITMADZSreadPoint'][msg.to]
+                                 del Setmain['ADITMADZSreadMember'][msg.to]
                                  cl.sendText(msg.to, "Lurking berhasil dinoaktifkan\n\nTanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\nJam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
                             
                         elif cmd == "lurkers":
                           if msg._from in admin:
-                            if msg.to in Setmain['ARreadPoint']:
-                                if Setmain['ARreadMember'][msg.to] != {}:
+                            if msg.to in Setmain['ADITMADZSreadPoint']:
+                                if Setmain['ADITMADZSreadMember'][msg.to] != {}:
                                     aa = []
-                                    for x in Setmain['ARreadMember'][msg.to]:
+                                    for x in Setmain['ADITMADZSreadMember'][msg.to]:
                                         aa.append(x)
                                     try:
                                         arrData = ""
@@ -2615,12 +2615,12 @@ def bot(op):
                                     except:
                                         pass
                                     try:
-                                        del Setmain['ARreadPoint'][msg.to]
-                                        del Setmain['ARreadMember'][msg.to]
+                                        del Setmain['ADITMADZSreadPoint'][msg.to]
+                                        del Setmain['ADITMADZSreadMember'][msg.to]
                                     except:
                                         pass
-                                    Setmain['ARreadPoint'][msg.to] = msg.id
-                                    Setmain['ARreadMember'][msg.to] = {}
+                                    Setmain['ADITMADZSreadPoint'][msg.to] = msg.id
+                                    Setmain['ADITMADZSreadMember'][msg.to] = {}
                                 else:
                                     cl.sendText(msg.to, "User kosong...")
                             else:
