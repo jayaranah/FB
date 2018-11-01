@@ -287,6 +287,7 @@ def help():
                   "╠❂͜͡☬➣" + key + "Speed\n" + \
                   "╠❂͜͡☬➣" + key + "Sprespon\n" + \
                   "╠❂͜͡☬➣" + key + "Tagall\n" + \
+                  "╠❂͜͡☬➣" + key + "Invite bot\n" + \
                   "╠❂͜͡☬➣" + key + "Mjoin\n" + \
                   "╠❂͜͡☬➣" + key + "Mbye\n" + \
                   "╠❂͜͡☬➣" + key + "Assist1-5\n" + \
